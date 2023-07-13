@@ -6,4 +6,7 @@ router.get("/", (req, res, next) => {
   res.render("index");
 });
 
+router.get('/anything',(req,res)=>{
+  res.send('this is our custom route')
+})
 module.exports = router;
