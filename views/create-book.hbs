@@ -4,10 +4,11 @@
         Title
         <input type="text" name="title">
     </label>
-        <label for="">
-            Author
-        <input type="text" name="author">
-    </label>
+     <select name="author" id="" multiple>
+        {{#each allAuthors}}
+            <option value="{{_id}}">{{name}}</option>
+        {{/each}}
+     </select>
         <label for="">
             Description
         <input type="text" name="description">
@@ -18,3 +19,8 @@
     </label>
     <button>Submit new Book</button>
 </form>
+
+{{#each allAuthors}}
+    {{name}}
+    {{age}}
+{{/each}}

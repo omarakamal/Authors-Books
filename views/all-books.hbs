@@ -3,9 +3,19 @@
 {{#each allBooks}}
     <div>
         <h1>{{title}}</h1>
-        <h2>{{author}}</h2>
+        {{#each author}}
+        <h2>{{name}}</h2>
+        {{/each}}
         <p>rating: {{rating}}</p>
-        <a href="/books/{{_id}}">Go to Book details</a>
+        <a href="/books/{{_id}}">Go to {{title}} details</a>
+        <br>
+        <br>
+        <a href="/books/{{_id}}/edit">Edit Book Info</a>
+        {{!-- <form action="/books/{{_id}}/edit">
+            <button>Edit Book</button>
+        </form> --}}
+        <form action="/books/{{_id}}/delete" method="POST">
+        <button>Delete Book</button></form>
     </div>
     <br>
 
